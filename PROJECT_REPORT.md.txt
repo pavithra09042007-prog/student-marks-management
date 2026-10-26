@@ -1,0 +1,83 @@
+# Student Marks Management System Using C
+
+## 1. Abstract
+The Student Marks Management System is a menu-driven console application developed using the C programming language. It records student roll numbers, names, and marks in three subjects. The program calculates the total marks, average, grade, and pass/fail result. It supports adding records, displaying all records, searching by roll number, and saving records in a text file so they can be loaded in a later run.
+
+## 2. Problem Statement
+Manually calculating and organizing student marks can take time and may lead to calculation errors. This project provides a simple computerized method for entering, calculating, searching, and storing student mark records.
+
+## 3. Objectives
+- Store student details and marks.
+- Calculate total and average automatically.
+- Assign a grade and determine pass/fail status.
+- Search records using a roll number.
+- Save records in a local text file.
+- Demonstrate structures, arrays, functions, loops, conditional statements, and file handling in C.
+
+## 4. Software Requirements
+- C compiler supporting C99, such as GCC or Clang.
+- Command Prompt, terminal, IDE, or online C compiler.
+- Operating system: Windows, Linux, or macOS.
+
+## 5. Concepts Used
+- `struct Student`: groups a student's roll number, name, and marks.
+- Arrays: store up to 100 student records and three subject marks per student.
+- Functions: separate input, calculation, search, display, and file operations.
+- Loops and `switch`: implement the menu and process records.
+- File handling: `fopen`, `fprintf`, `fgets`, and `fclose` save and reload records.
+- Validation: checks menu choices, marks (0–100), and duplicate roll numbers.
+
+## 6. Algorithm
+1. Start the program.
+2. Load saved student records from `students.txt`, if the file exists.
+3. Display the main menu.
+4. If Add is selected, read the roll number, name, and three marks; validate the inputs; reject duplicate roll numbers; calculate and display the result; save the record.
+5. If Display is selected, print all stored records.
+6. If Search is selected, find and display the record matching the entered roll number.
+7. If Save is selected, save all records to the text file.
+8. If Exit is selected, save the records and stop.
+9. Otherwise, repeat the menu.
+
+## 7. Calculations
+**Total** = Subject 1 + Subject 2 + Subject 3
+
+**Average** = Total / 3.0
+
+A student passes only if every subject mark is at least 35. If any subject is below 35, the grade is `F` and the result is `FAIL`. Otherwise, the grade is assigned using the average thresholds described in `README.md`.
+
+## 8. Sample Test Case
+Input:
+- Roll number: 101
+- Name: Anu
+- Subject 1: 90
+- Subject 2: 85
+- Subject 3: 95
+
+Expected output summary:
+- Total = 270
+- Average = 90.00
+- Grade = A+
+- Result = PASS
+
+## 9. Test Plan
+| Test | Input/action | Expected outcome |
+|---|---|---|
+| Add valid student | Roll 101, marks 90, 85, 95 | Record saved; total 270; average 90.00; A+; PASS |
+| Invalid mark | Enter 120 | Program asks for a mark from 0 to 100 |
+| Duplicate roll | Add an existing roll number | Duplicate is rejected |
+| Search existing roll | Search for 101 after adding it | Matching record is displayed |
+| Search missing roll | Search for a roll not stored | “No student found” message |
+| Display empty list | Display before adding a record | Informative empty-list message |
+| Restart program | Exit and run again | Saved records are loaded from the file |
+
+## 10. Result
+The application demonstrates a basic student marks management workflow. It calculates totals, averages, grades, and results, supports searching and listing records, and stores data locally in a text file. Actual execution should be performed in a C99-compatible compiler before submission.
+
+## 11. Limitations and Future Enhancements
+- Data is stored in a simple text file and is intended for a small educational project.
+- The application supports a maximum of 100 records.
+- Names should not contain the `|` character because it is used as the file separator.
+- Future versions could add editing/deleting records, more subjects, report-card printing, sorting, and a graphical user interface.
+
+## 12. Conclusion
+The Student Marks Management System is a practical C programming project that combines structures, arrays, functions, loops, conditions, and file handling. It reduces repetitive manual calculations and provides a clear way to manage basic student mark records.
